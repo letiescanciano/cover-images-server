@@ -17,6 +17,6 @@ app.get('/imagekit-token', (req, res) => {
   res.status(200).json(authenticationParameters)
 })
 
-app.listen(9000, () => {
+app.listen(process.env.PORT || 9000, () => {
   console.log('listening 9000')
 })
