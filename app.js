@@ -1,11 +1,11 @@
 require('dotenv').config()
 const ImageKit = require('imagekit')
 const fs = require('fs')
-
+const cors = require('cors')
 const express = require('express')
-const res = require('express/lib/response')
 const app = express()
 
+app.use(cors())
 app.get('/imagekit-token', (req, res) => {
   const imagekit = new ImageKit({
     publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
